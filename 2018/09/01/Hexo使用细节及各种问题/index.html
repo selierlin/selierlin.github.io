@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hexo使用细节及各种问题 | Selier | 分享美的价值</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo,Github">
+    <meta name="description" content="解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Github coding)">
+<meta name="keywords" content="hexo,Github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo使用细节及各种问题">
+<meta property="og:url" content="http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/index.html">
+<meta property="og:site_name" content="Selier">
+<meta property="og:description" content="解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Github coding)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901143609335-461771771.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901144511147-1883435396.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901145636752-536175344.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901150405773-793834396.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901154841420-554035428.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901155053936-2107072939.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901150703058-108745341.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901151212881-1366603102.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901151042298-1743809668.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901153130743-436751981.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901154121452-1849897849.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901155338823-823730358.png">
+<meta property="og:updated_time" content="2018-09-01T08:29:40.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo使用细节及各种问题">
+<meta name="twitter:description" content="解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Github coding)">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901143609335-461771771.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Selier" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Selier</h5>
+          <a href="mailto:1078063914@qq.com" title="1078063914@qq.com" class="mail">1078063914@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/selierlin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/linxianliang" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://selier.cnblogs.com/"  >
+                <i class="icon icon-lg icon-link"></i>
+                博客园
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo使用细节及各种问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo使用细节及各种问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-01T08:28:51.000Z" itemprop="datePublished" class="page-time">
+  2018-09-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片不显示"><span class="post-toc-text">图片不显示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改文章模板"><span class="post-toc-text">修改文章模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同时发布到多个仓库"><span class="post-toc-text">同时发布到多个仓库</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hexo使用细节及各种问题"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo使用细节及各种问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-01 16:28:51" datetime="2018-09-01T08:28:51.000Z"  itemprop="datePublished">2018-09-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Github coding)</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="图片不显示"><a href="#图片不显示" class="headerlink" title="图片不显示"></a>图片不显示</h2><p>在使用过程中，会发现有的引用图片无法显示的问题。但是如果直接复制图片地址到浏览器打开的话显示正常</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901143609335-461771771.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>403 forbidden，说明了这个网络资源这样获取是被拒绝的，那么通过简单的百度，找到了相关的解决方法，并去实际尝试：</p>
+<p><strong>解决方法</strong> ：只需要在头部添加一个meta   <code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;</code></p>
+<p>当然在Hexo中呢，应该在你的 md文件中添加meta，如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2018-09-01 14:38:14</span><br><span class="line">tags: test,测试</span><br><span class="line">description: 测试</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;meta name="referrer" content="no-referrer" /&gt;</span><br><span class="line"></span><br><span class="line"><span class="section"># 这是一篇测试文章</span></span><br><span class="line"><span class="section">## 内容</span></span><br></pre></td></tr></table></figure>
+<p>这样只要你在每篇文章中添加这行meta就可以解决图片不显示的问题啦！</p>
+<h2 id="修改文章模板"><a href="#修改文章模板" class="headerlink" title="修改文章模板"></a>修改文章模板</h2><p>每当你使用命令 <code>hexo new &#39;文章名称&#39;</code> 新建一篇文章时，你可能需要在里面书写 <code>&lt;!--more--&gt;</code> ，或者还要写 meta，这样你会觉得很麻烦。所以这里我说下修改模板的方法，解决你每次都要写重复的内容</p>
+<ul>
+<li>打开你的博客目录下的 <code>scaffolds</code> - <code>post.md</code> 文件</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901144511147-1883435396.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>它默认是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>你可以将每次重复书写的内容放在里面，这样每次新建的时候都要按这个模板生成。我的模板如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">description: </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;meta name="referrer" content="no-referrer" /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="同时发布到多个仓库"><a href="#同时发布到多个仓库" class="headerlink" title="同时发布到多个仓库"></a>同时发布到多个仓库</h2><p>Github毕竟是国外的网站，在国内访问会受到不少限制，这时候你可以选择 &lt;coding.net&gt; 来发布自己的博客。但是又想两个都发布，最好还是写一篇能同时发布到这两个站点</p>
+<p>这个是当然没有问题的！但是一个站点只可以部署一个网站，因为它会校验SSH key的唯一性，不可以重复。下面看下具体步骤</p>
+<p>1、首先你需要注册一个 <a href="https://coding.net" target="_blank" rel="noopener">coding</a> ，新建一个项目</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901145636752-536175344.png" alt="新建项目" title="">
+                </div>
+                <div class="image-caption">新建项目</div>
+            </figure>
+<p>要求项目名称： <code>你的用户名.coding.me</code> （这里域名是coding.me，不是coding.net）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901150405773-793834396.png" alt="配置项目" title="">
+                </div>
+                <div class="image-caption">配置项目</div>
+            </figure>
+<p>新建完项目后，点项目的 <code>代码</code> - <code>Pages服务</code> - <code>一键开启静态Pages</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901154841420-554035428.png" alt="开启静态Pages" title="">
+                </div>
+                <div class="image-caption">开启静态Pages</div>
+            </figure>
+<p>开启成功</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901155053936-2107072939.png" alt="开启成功" title="">
+                </div>
+                <div class="image-caption">开启成功</div>
+            </figure>
+<p>2、打开 <code>个人设置</code> - <code>SSH公钥</code> - <code>新增公钥</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901150703058-108745341.png" alt="设置SSH" title="">
+                </div>
+                <div class="image-caption">设置SSH</div>
+            </figure>
+<p>3、将上次部署Hexo时生成的Hexo密钥拷贝到这里，路径为  <code>你的用户目录/.ssh/id_rsa.pub</code> 。如果没有这个文件的话，可以根据我发布的 hexo+github搭建教程 中 配置SSH key</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901151212881-1366603102.png" alt="SSH文件位置" title="">
+                </div>
+                <div class="image-caption">SSH文件位置</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901151042298-1743809668.png" alt="添加SSH key" title="">
+                </div>
+                <div class="image-caption">添加SSH key</div>
+            </figure>
+<blockquote>
+<p>这个 SSH key 一定要在github、coding中一致，所以会共用 <code>id_rsa.pub</code> 中的key。</p>
+</blockquote>
+<p>4、添加完成后，我们测试下连接</p>
+<p>打开 <code>git-cmd</code> / <code>git-bash</code> / <code>cmd</code> ，运行命令： <code>ssh -T git@git.coding.net</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901153130743-436751981.png" alt="连接成功" title="">
+                </div>
+                <div class="image-caption">连接成功</div>
+            </figure>
+<p>5、配置 <code>_config.yml</code></p>
+<p>打开 博客目录下的 <code>_config.yml</code> ，修改 <code>deploy</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span></span><br><span class="line"><span class="attr">    github:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git,master</span></span><br><span class="line"><span class="attr">    coding:</span> <span class="string">git@git.coding.net:你的用户名/你的用户名.coding.me.git,master</span></span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901154121452-1849897849.png" alt="配置" title="">
+                </div>
+                <div class="image-caption">配置</div>
+            </figure>
+<p>6、发布</p>
+<p>运行 <code>git-cmd&#39; ，转到博客目录，生成并上传仓库</code>hexo d -g`</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901155338823-823730358.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在你的博客网站就可以访问啦！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-01T08:29:40.328Z" itemprop="dateUpdated">2018-09-01 16:29:40</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/01/Hexo使用细节及各种问题/" target="_blank" rel="external">http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://theliang.coding.me/blog">
+            <img src="/img/avatar.jpg" alt="Selier">
+            Selier
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-Github/">hexo,Github</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&title=《Hexo使用细节及各种问题》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&title=《Hexo使用细节及各种问题》 — Selier&source=
+
+
+解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Githu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo使用细节及各种问题》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&via=http://theliang.coding.me/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/01/微擎安装使用及插件模块安装/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">微擎安装使用及插件模块安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Selier &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&title=《Hexo使用细节及各种问题》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&title=《Hexo使用细节及各种问题》 — Selier&source=
+
+
+解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时发布同步到多个仓库站点(Githu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo使用细节及各种问题》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/&via=http://theliang.coding.me/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://theliang.coding.me/blog/2018/09/01/Hexo使用细节及各种问题/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
