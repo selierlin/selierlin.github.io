@@ -2,11 +2,9 @@
 
 [selierlin.github.io](https://selierlin.github.io)
 
-[theliang.coding.net](https://theliang.coding.net)
-
 [selier.cnblogs.com](http://selier.cnblogs.com/)
 
-[blog.csdn.net/the_liang/](https://blog.csdn.net/the_liang/)
+[blog.csdn.net/the_liang](https://blog.csdn.net/the_liang)
 
 
 本博客的主要标签为： `Java` `技术` `分享` `博客` `经验` `技巧` `效率` `工具`
