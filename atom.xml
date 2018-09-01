@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://theliang.coding.me/blog/"/>
-  <updated>2018-09-01T06:38:14.415Z</updated>
+  <updated>2018-09-01T06:29:56.972Z</updated>
   <id>http://theliang.coding.me/blog/</id>
   
   <author>
@@ -15,24 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://theliang.coding.me/blog/2018/09/01/test/"/>
-    <id>http://theliang.coding.me/blog/2018/09/01/test/</id>
-    <published>2018-09-01T06:38:14.000Z</published>
-    <updated>2018-09-01T06:38:14.415Z</updated>
-    
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>微擎安装使用及插件模块安装</title>
