@@ -125,8 +125,9 @@
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001520549-1245234083.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001451028-1607010567.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001652539-250117459.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901101234460-1255176256.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001817554-1020312230.png">
-<meta property="og:updated_time" content="2018-09-01T00:37:50.651Z">
+<meta property="og:updated_time" content="2018-09-01T02:20:48.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo+github搭建免费个人博客详细教程">
 <meta name="twitter:description" content="Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客">
@@ -540,7 +541,60 @@
 <p><code>hexo new page &quot;my-second-blog&quot;</code> 生成如下：</p>
 <p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001652539-250117459.png" alt=""></p>
 <p>最终部署时生成：<code>博客目录\public\my-second-blog\index.html</code> ，但是它不会作为文章出现在博文目录。</p>
-<h4 id="5、如何让博文列表不显示全部内容"><a href="#5、如何让博文列表不显示全部内容" class="headerlink" title="5、如何让博文列表不显示全部内容"></a>5、如何让博文列表不显示全部内容</h4><p>默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？</p>
+<h4 id="5、修改主题"><a href="#5、修改主题" class="headerlink" title="5、修改主题"></a>5、修改主题</h4><p>既然默认主题很丑，那我们首先来替换一个好看点的主题。这是 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方主题</a></p>
+<p>这里我推荐几款不错的主题：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">仓库地址</th>
+<th style="text-align:left">演示地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NexT</a></td>
+<td style="text-align:left"><a href="https://notes.iissnan.com/" target="_blank" rel="noopener">https://notes.iissnan.com/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT6.0</a></td>
+<td style="text-align:left"><a href="https://theme-next.org/" target="_blank" rel="noopener">https://theme-next.org/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a></td>
+<td style="text-align:left"><a href="http://litten.me/" target="_blank" rel="noopener">http://litten.me/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="noopener">yelee</a></td>
+<td style="text-align:left"><a href="http://moxfive.xyz/" target="_blank" rel="noopener">http://moxfive.xyz/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">material</a></td>
+<td style="text-align:left"><a href="https://blog.nfz.moe/" target="_blank" rel="noopener">https://blog.nfz.moe/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">indigo</a></td>
+<td style="text-align:left"><a href="https://imys.net/" target="_blank" rel="noopener">https://imys.net/</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="noopener">maupassant</a></td>
+<td style="text-align:left"><a href="https://www.haomwei.com" target="_blank" rel="noopener">https://www.haomwei.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>安装步骤：</p>
+<ul>
+<li>打开 <code>git-cmd</code> ，跳转到你的博客目录</li>
+<li>使用 git 拉取主题 <code>git clone 仓库主题地址.git themes/主题名称</code> ，意思是下载主题并将其保存到themes目录下</li>
+</ul>
+<p>如：<code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code></p>
+<p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901101234460-1255176256.png" alt=""></p>
+<ul>
+<li>修改 主目录下 <code>_config.yml</code> 中的 <code>theme: landscape</code> 改为 <code>theme: next</code> ，然后重新执行 <code>hexo g</code> 来重新生成。</li>
+</ul>
+<blockquote>
+<p>如果出现一些莫名其妙的问题，可以先执行 <code>hexo clean</code> 来清理一下public的内容，然后再来重新生成和发布 <code>hexo d -g</code></p>
+</blockquote>
+<h4 id="6、如何让博文列表不显示全部内容"><a href="#6、如何让博文列表不显示全部内容" class="headerlink" title="6、如何让博文列表不显示全部内容"></a>6、如何让博文列表不显示全部内容</h4><p>默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？</p>
 <p>答案是在合适的位置加上 <code>&lt;!--more--&gt;</code> 即可，例如：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 前言</span></span><br><span class="line"></span><br><span class="line">使用github pages服务搭建博客的好处有：</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>全是静态文件，访问速度快；</span><br><span class="line"><span class="bullet">2. </span>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</span><br><span class="line"><span class="bullet">3. </span>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"><span class="bullet">4. </span>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</span><br><span class="line"><span class="bullet">5. </span>博客内容可以轻松打包、转移、发布到其它平台；</span><br><span class="line"><span class="bullet">6. </span>等等；</span><br></pre></td></tr></table></figure>
 <p>最终效果：</p>
@@ -703,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建github博客"><span class="nav-number">1.2.</span> <span class="nav-text">搭建github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建仓库"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">新建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载安装"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">配置SSH key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-node-js"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装 node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo写博客"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、简介"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">1、简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、原理"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2、原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、注意事项"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">3、注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、安装"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">4、安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、配置-config-yml"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">5、配置 __config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、启动本地服务"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">6、启动本地服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、上传到Github"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">7、上传到Github</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">1.2.5.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、保留CNAME、README-md等文件"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">1、保留CNAME、README.md等文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、常用hexo命令"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">2、常用hexo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-config-yml"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">3、_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、写博客"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">4、写博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、如何让博文列表不显示全部内容"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">5、如何让博文列表不显示全部内容</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建github博客"><span class="nav-number">1.2.</span> <span class="nav-text">搭建github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建仓库"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">新建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载安装"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">配置SSH key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-node-js"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装 node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo写博客"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、简介"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">1、简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、原理"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2、原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、注意事项"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">3、注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、安装"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">4、安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、配置-config-yml"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">5、配置 __config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、启动本地服务"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">6、启动本地服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、上传到Github"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">7、上传到Github</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">1.2.5.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、保留CNAME、README-md等文件"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">1、保留CNAME、README.md等文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、常用hexo命令"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">2、常用hexo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-config-yml"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">3、_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、写博客"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">4、写博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、修改主题"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">5、修改主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、如何让博文列表不显示全部内容"><span class="nav-number">1.2.5.6.</span> <span class="nav-text">6、如何让博文列表不显示全部内容</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
