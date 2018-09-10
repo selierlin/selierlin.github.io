@@ -1,27 +1,114 @@
 <!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
-    
-
-    
-
-    
-
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
 
 
-    <meta charset="utf-8">
-    
-    
-    
-    
-    <title>微擎安装使用及插件模块安装 | Selier | 分享美的价值</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="PHP,微擎">
-    <meta name="description" content="讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法">
 <meta name="keywords" content="PHP,微擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微擎安装使用及插件模块安装">
@@ -57,183 +144,263 @@
 <meta name="twitter:title" content="微擎安装使用及插件模块安装">
 <meta name="twitter:description" content="讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法">
 <meta name="twitter:image" content="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825082245629-2016727363.png">
-    
-        <link rel="alternate" type="application/atom+xml" title="Selier" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
 
-    <!-- custom head -->
-    
+
+
+  <link rel="alternate" href="/atom.xml" title="Selier" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>微擎安装使用及插件模块安装 | Selier</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    <aside id="menu"  >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Selier</h5>
-          <a href="mailto:1078063914@qq.com" title="1078063914@qq.com" class="mail">1078063914@qq.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Selier</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                存档
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                分类
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/selierlin" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://weibo.com/linxianliang" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                微博
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://selier.cnblogs.com/"  >
-                <i class="icon icon-lg icon-link"></i>
-                博客园
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+    
+      
+        <p class="site-subtitle">分享美的价值</p>
+      
+    
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">微擎安装使用及插件模块安装</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header post-header">
-
-    <div class="container fade-scale">
-        <h1 class="title">微擎安装使用及插件模块安装</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2018-09-01T05:09:42.000Z" itemprop="datePublished" class="page-time">
-  2018-09-01
-</time>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
 
-            
-        </h5>
-    </div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
 
     
 
 
-</header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
 
-
-<div class="container body-wrap">
+  <div id="posts" class="posts-expand">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装微擎"><span class="post-toc-text">安装微擎</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装PHP及Web、数据库环境"><span class="post-toc-text">1. 安装PHP及Web、数据库环境</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-解压拷贝微擎"><span class="post-toc-text">2. 解压拷贝微擎</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-运行"><span class="post-toc-text">3. 运行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-访问"><span class="post-toc-text">4. 访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-安装微擎"><span class="post-toc-text">5. 安装微擎</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装插件模块"><span class="post-toc-text">安装插件模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-下载模块并解压"><span class="post-toc-text">1. 下载模块并解压</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-将模块拷贝到微擎的addons目录"><span class="post-toc-text">2. 将模块拷贝到微擎的addons目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-安装模块"><span class="post-toc-text">3. 安装模块</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
 
+  
 
-<article id="post-微擎安装使用及插件模块安装"
-  class="post-article article-type-post fade" itemprop="blogPost">
+  
+  
+  
 
-    <div class="post-card">
-        <h1 class="post-card-title">微擎安装使用及插件模块安装</h1>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Selier">
+      <meta itemprop="description" content="Java 技术 分享 博客 效率 工具 资源">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Selier">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微擎安装使用及插件模块安装
+              
+            
+          </h1>
+        
+
         <div class="post-meta">
-            <time class="post-time" title="2018-09-01 13:09:42" datetime="2018-09-01T05:09:42.000Z"  itemprop="datePublished">2018-09-01</time>
+          <span class="post-time">
 
             
-
+            
+            
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2018-09-01 13:09:42 / 修改时间：16:35:32" itemprop="dateCreated datePublished" datetime="2018-09-01T13:09:42+08:00">2018-09-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法</div>
+          
 
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <meta name="referrer" content="no-referrer">
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
 
 <p>讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法</p>
 <a id="more"></a>
 <h2 id="安装微擎"><a href="#安装微擎" class="headerlink" title="安装微擎"></a>安装微擎</h2><blockquote>
 <p>在安装微擎时，建议不要使用官网的(0.5 - 1.0)版本，个人在安装过程会出现错误，如下：</p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825082245629-2016727363.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825082245629-2016727363.png" alt=""></p>
 <p>建议使用 商业版本，下载地址我这里有提供：</p>
 <p><a href="https://download.csdn.net/download/the_liang/10635914" target="_blank" rel="noopener">微擎 1.7.9 版本</a></p>
 <p><a href="https://download.csdn.net/download/the_liang/10620146" target="_blank" rel="noopener">微擎 1.7.7 版本</a></p>
@@ -243,125 +410,41 @@
 </blockquote>
 <h3 id="1-安装PHP及Web、数据库环境"><a href="#1-安装PHP及Web、数据库环境" class="headerlink" title="1. 安装PHP及Web、数据库环境"></a>1. 安装PHP及Web、数据库环境</h3><p>首先需要准备PHP环境，我这里用的是集成环境(WampServer)，当然你也可以使用其它的环境，但是本教程不会讲述如何安装环境</p>
 <h3 id="2-解压拷贝微擎"><a href="#2-解压拷贝微擎" class="headerlink" title="2. 解压拷贝微擎"></a>2. 解压拷贝微擎</h3><p>将下载好的微擎解压，拷贝到Web容器的站点目录(www目录，有的环境是wwwroot)下，也就是wamp安装目录下的www</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083214134-1152638008.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083214134-1152638008.png" alt=""></p>
 <p>如果有重复就直接替换</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083359609-2072526639.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083359609-2072526639.png" alt=""></p>
 <h3 id="3-运行"><a href="#3-运行" class="headerlink" title="3. 运行"></a>3. 运行</h3><p>WampServer直接左击右下角的小图标，选择 <code>重启所有服务</code> ，并选择 <code>切换到在线状态</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083721816-1275471659.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825083721816-1275471659.png" alt=""></p>
 <h3 id="4-访问"><a href="#4-访问" class="headerlink" title="4. 访问"></a>4. 访问</h3><p>完成后，我们可以打开浏览器访问链接了： <a href="http://localhost:80" target="_blank" rel="noopener">http://localhost:80</a> (注意这里的端口，是在Web容器中配置的，我这里配置的是808，不影响教程)</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084258830-813195805.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084258830-813195805.png" alt=""></p>
 <blockquote>
 <p>需要注意的是：如果你打开的页面是空白的，那需要注意下mysql中是否包含有 <code>we7</code> 或者 <code>weengine</code> 数据库，如果有需要将它们删除，然后再重复 <code>第二步</code></p>
 </blockquote>
 <h3 id="5-安装微擎"><a href="#5-安装微擎" class="headerlink" title="5. 安装微擎"></a>5. 安装微擎</h3><p>5.1. 点击链接，进入安装</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084636282-1409992935.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084636282-1409992935.png" alt=""></p>
 <p>此时会出现两个问题：<code>您的PHP环境不支持cURL, 也不支持 allow_url_fopen</code> <code>没有启用OpenSSL</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084815370-995381052.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825084815370-995381052.png" alt=""></p>
 <p>解决：修改php.ini配置（WampServer需要在 <code>C:\wamp\bin\apache\apache2.2.22\bin\php.ini</code> 修改，类似的如果你用的是其它的集成环境，请注意下Web容器中是否有php.ini）</p>
 <p>分别搜索 <code>curl</code> <code>openssl</code> ，将它们前面的分号去掉</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085257209-1523464150.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085240868-1875017244.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085257209-1523464150.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085240868-1875017244.png" alt=""></p>
 <p>5.2. 然后重新启动服务器， 再次打开，此时就没有错误提示了</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085428989-2109499368.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085428989-2109499368.png" alt=""></p>
 <p>5.3. 点击继续，开始配置数据库和管理员账号。然后点继续</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085941897-950835935.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825090000286-885069434.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825085941897-950835935.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825090000286-885069434.png" alt=""></p>
 <blockquote>
 <p>注意：如果这里点安装无响应，或者访问错误，请切换微擎版本</p>
 </blockquote>
 <p>5.4. 安装成功后可以进入首页啦</p>
 <p>输入刚刚配置的管理员账号密码，登录成功</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091329760-1470097412.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091359565-276580137.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091329760-1470097412.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091359565-276580137.png" alt=""></p>
 <blockquote>
 <p>如果忘记了账号密码，需要到数据库表中修改，或者删除数据库重新安装微擎，当然还有一个更好的办法，下载 <a href="https://download.csdn.net/download/the_liang/10625844" target="_blank" rel="noopener">附件</a> </p>
 </blockquote>
 <p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091231639-1037925641.png" alt=""></p>
-<h2 id="安装插件模块"><a href="#安装插件模块" class="headerlink" title="安装插件模块"></a>安装插件模块</h2><h3 id="1-下载模块并解压"><a href="#1-下载模块并解压" class="headerlink" title="1. 下载模块并解压"></a>1. 下载模块并解压</h3><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091715104-1148843727.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<h2 id="安装插件模块"><a href="#安装插件模块" class="headerlink" title="安装插件模块"></a>安装插件模块</h2><h3 id="1-下载模块并解压"><a href="#1-下载模块并解压" class="headerlink" title="1. 下载模块并解压"></a>1. 下载模块并解压</h3><p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825091715104-1148843727.png" alt=""></p>
 <blockquote>
 <p>注意：我这个是带有前后端的小程序应用，你下载前要注意看看你下载的模块是否需要前后端</p>
 </blockquote>
@@ -369,368 +452,415 @@
 <blockquote>
 <p>注意看截图的目录结构</p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092044961-673945896.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092044961-673945896.png" alt=""></p>
 <h3 id="3-安装模块"><a href="#3-安装模块" class="headerlink" title="3. 安装模块"></a>3. 安装模块</h3><p>3.1 重启服务，打开网址，登录系统。会发现出现了一个未安装应用。</p>
 <blockquote>
 <p>没有看到也没有关系，可能是因为系统还没有完全加载好。</p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092246011-1850395181.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092246011-1850395181.png" alt=""></p>
 <p>3.2 点击未安装的应用，选择 <code>安装应用模块</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092552026-1736012326.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092616947-1704069866.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092552026-1736012326.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092616947-1704069866.png" alt=""></p>
 <p>3.3 勾选 <code>体验套餐服务</code> 然后点 <code>确定安装</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092654456-1710375720.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092654456-1710375720.png" alt=""></p>
 <p>安装成功</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092732190-578569095.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092732190-578569095.png" alt=""></p>
 <p>3.4 安装完成后，可以在 <code>系统</code> - <code>小程序应用</code> - <code>已安装应用</code> 中看到。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092836896-385616020.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180825092836896-385616020.png" alt=""></p>
 <blockquote>
 <p>注意：如果安装失败，请确定你的微擎是否有安装异常，以及你模块应用缺少文件</p>
 </blockquote>
 
-        </div>
-
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2018-09-01T08:35:32.608Z" itemprop="dateUpdated">2018-09-01 16:35:32</time>
-</span><br>
-
-
-        
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/01/微擎安装使用及插件模块安装/" target="_blank" rel="external">http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/</a>
-        
+      
     </div>
+
     
-    <footer>
-        <a href="http://theliang.coding.me/blog">
-            <img src="/img/avatar.jpg" alt="Selier">
-            Selier
-        </a>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/微擎/" rel="tag"># 微擎</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" rel="next" title="使用hexo+github搭建免费个人博客详细教程">
+                <i class="fa fa-chevron-left"></i> 使用hexo+github搭建免费个人博客详细教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/Hexo使用细节及各种问题/" rel="prev" title="Hexo使用细节及各种问题">
+                Hexo使用细节及各种问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
+  </div>
+  
+  
+  
+  </article>
 
 
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微擎/">微擎</a></li></ul>
+  </div>
 
 
-            
-<div class="page-share-wrap">
-    
+          </div>
+          
 
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&title=《微擎安装使用及插件模块安装》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&title=《微擎安装使用及插件模块安装》 — Selier&source=
-
-讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微擎安装使用及插件模块安装》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&via=http://theliang.coding.me/blog" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
+  
 
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
+  </div>
 
+  <aside id="sidebar" class="sidebar">
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/01/Hexo使用细节及各种问题/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Hexo使用细节及各种问题</h4>
-      </a>
-    </div>
-  
+    <div class="sidebar-inner">
 
-  
-    <div class="waves-block waves-effect next">
-      <a href="/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">使用hexo+github搭建免费个人博客详细教程</h4>
-      </a>
-    </div>
-  
-</nav>
+      
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-        </label>
-        
-    </div>
-</div>
-
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p><span>Selier &copy; 2018</span>
-            <span>
+              <p class="site-author-name" itemprop="name">Selier</p>
+              <p class="site-description motion-element" itemprop="description">Java 技术 分享 博客 效率 工具 资源</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
-    </div>
-</footer>
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&title=《微擎安装使用及插件模块安装》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&title=《微擎安装使用及插件模块安装》 — Selier&source=
-
-讲解微擎安装使用及插件模块的安装，解决下载插件模块后不知道怎么使用的情况。以及安装失败，忘记密码的解决方法" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微擎安装使用及插件模块安装》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/&via=http://theliang.coding.me/blog" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://theliang.coding.me/blog/2018/09/01/微擎安装使用及插件模块安装/" alt="微信分享二维码">
-</div>
-
-
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-
-</script>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
-            <time class="flex-col time">{date}</time>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-    </a>
-</li>
-</template>
+      </section>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装微擎"><span class="nav-number">1.</span> <span class="nav-text">安装微擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装PHP及Web、数据库环境"><span class="nav-number">1.1.</span> <span class="nav-text">1. 安装PHP及Web、数据库环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-解压拷贝微擎"><span class="nav-number">1.2.</span> <span class="nav-text">2. 解压拷贝微擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-运行"><span class="nav-number">1.3.</span> <span class="nav-text">3. 运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问"><span class="nav-number">1.4.</span> <span class="nav-text">4. 访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安装微擎"><span class="nav-number">1.5.</span> <span class="nav-text">5. 安装微擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件模块"><span class="nav-number">2.</span> <span class="nav-text">安装插件模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载模块并解压"><span class="nav-number">2.1.</span> <span class="nav-text">1. 下载模块并解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将模块拷贝到微擎的addons目录"><span class="nav-number">2.2.</span> <span class="nav-text">2. 将模块拷贝到微擎的addons目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装模块"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装模块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Selier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
 
 
 
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+        
+      </div>
+    </footer>
 
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

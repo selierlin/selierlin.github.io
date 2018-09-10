@@ -1,27 +1,114 @@
 <!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
-    
-
-    
-
-    
-
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
 
 
-    <meta charset="utf-8">
-    
-    
-    
-    
-    <title>使用hexo+github搭建免费个人博客详细教程 | Selier | 分享美的价值</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="Git,Markdown,Hexo">
-    <meta name="description" content="Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客">
 <meta name="keywords" content="Git,Markdown,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用hexo+github搭建免费个人博客详细教程">
@@ -74,174 +161,274 @@
 <meta name="twitter:title" content="使用hexo+github搭建免费个人博客详细教程">
 <meta name="twitter:description" content="Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客">
 <meta name="twitter:image" content="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203039764-1977719250.png">
-    
-        <link rel="alternate" type="application/atom+xml" title="Selier" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
 
-    <!-- custom head -->
-    
+
+
+  <link rel="alternate" href="/atom.xml" title="Selier" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>使用hexo+github搭建免费个人博客详细教程 | Selier</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
-<body>
-    <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    <aside id="menu"  >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Selier</h5>
-          <a href="mailto:1078063914@qq.com" title="1078063914@qq.com" class="mail">1078063914@qq.com</a>
-        </hgroup>
-      </div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Selier</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                存档
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                分类
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/selierlin" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://weibo.com/linxianliang" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                微博
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://selier.cnblogs.com/"  >
-                <i class="icon icon-lg icon-link"></i>
-                博客园
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+    
+      
+        <p class="site-subtitle">分享美的价值</p>
+      
+    
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">使用hexo+github搭建免费个人博客详细教程</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
-    </div>
-</header>
-<header class="content-header post-header">
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
 
-    <div class="container fade-scale">
-        <h1 class="title">使用hexo+github搭建免费个人博客详细教程</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2018-09-01T00:35:08.000Z" itemprop="datePublished" class="page-time">
-  2018-09-01
-</time>
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Github/">Github</a></li></ul>
 
-            
-        </h5>
-    </div>
+  
+
+
+
+</div>
+    </header>
 
     
 
 
-</header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
 
-
-<div class="container body-wrap">
+  <div id="posts" class="posts-expand">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建github博客"><span class="post-toc-text">搭建github博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建仓库"><span class="post-toc-text">创建仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建仓库"><span class="post-toc-text">新建仓库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Git"><span class="post-toc-text">安装Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下载安装"><span class="post-toc-text">下载安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置SSH-key"><span class="post-toc-text">配置SSH key</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-node-js"><span class="post-toc-text">安装 node.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用hexo写博客"><span class="post-toc-text">使用hexo写博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、简介"><span class="post-toc-text">1、简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、原理"><span class="post-toc-text">2、原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、注意事项"><span class="post-toc-text">3、注意事项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、安装"><span class="post-toc-text">4、安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、配置-config-yml"><span class="post-toc-text">5、配置 __config.yml</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、启动本地服务"><span class="post-toc-text">6、启动本地服务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7、上传到Github"><span class="post-toc-text">7、上传到Github</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其它"><span class="post-toc-text">其它</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、保留CNAME、README-md等文件"><span class="post-toc-text">1、保留CNAME、README.md等文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、常用hexo命令"><span class="post-toc-text">2、常用hexo命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、-config-yml"><span class="post-toc-text">3、_config.yml</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、写博客"><span class="post-toc-text">4、写博客</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、修改主题"><span class="post-toc-text">5、修改主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、如何让博文列表不显示全部内容"><span class="post-toc-text">6、如何让博文列表不显示全部内容</span></a></li></ol></li></ol></li></ol></li></ol>
-        </nav>
-    </aside>
 
+  
 
-<article id="post-使用hexo-github搭建免费个人博客详细教程"
-  class="post-article article-type-post fade" itemprop="blogPost">
+  
+  
+  
 
-    <div class="post-card">
-        <h1 class="post-card-title">使用hexo+github搭建免费个人博客详细教程</h1>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Selier">
+      <meta itemprop="description" content="Java 技术 分享 博客 效率 工具 资源">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Selier">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用hexo+github搭建免费个人博客详细教程
+              
+            
+          </h1>
+        
+
         <div class="post-meta">
-            <time class="post-time" title="2018-09-01 08:35:08" datetime="2018-09-01T00:35:08.000Z"  itemprop="datePublished">2018-09-01</time>
+          <span class="post-time">
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Github/">Github</a></li></ul>
-
-
+            
+            
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2018-09-01 08:35:08 / 修改时间：14:29:36" itemprop="dateCreated datePublished" datetime="2018-09-01T08:35:08+08:00">2018-09-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客</div>
+          
 
         </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <meta name="referrer" content="no-referrer">
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
 
 <blockquote>
 <p>Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客</p>
@@ -275,78 +462,24 @@
 </ol>
 <p>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
 <p><strong>具体步骤截图如下：</strong></p>
-<h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203039764-1977719250.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203054138-1575956832.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203325128-839066444.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203039764-1977719250.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203054138-1575956832.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203325128-839066444.png" alt=""></p>
 <p>创建完成</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203357013-1844841811.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831203357013-1844841811.png" alt=""></p>
 <p>过了一会后就可以访问自己的网站啦！</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831204919979-1323283699.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831204919979-1323283699.png" alt=""></p>
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><p>打开Git <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a> ，我们点 windows</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205329048-1071025267.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205505133-976328913.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205329048-1071025267.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205505133-976328913.png" alt=""></p>
 <blockquote>
 <p>这里我推荐使用便携版，因为很多人不喜欢安装软件，何况又是一个不太经常使用的软件，所以便携版安装卸载都很方便<br>如果下载的是安装版，那么你直接按默认值一直点下一步就可以了。如果实在不会安装可以去网上找教程。</p>
 </blockquote>
 <p>便携版下载完只需要解压，再配置环境变量</p>
 <p>下载完后解压的文件如下：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205912843-1688970370.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831205912843-1688970370.png" alt=""></p>
 <p>打开系统的环境变量，编辑Path环境变，新建路径： <code>git的存放目录</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831212436273-2012766987.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831212436273-2012766987.png" alt=""></p>
 <p>至此，git算是安装完成啦，我们可以打开控制台测试一下</p>
 <p> <code>win</code> + <code>r</code> 输入 <code>cmd</code>  ，然后 输入 <code>git --version</code> </p>
 <p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831210803891-997871094.png" alt=""></p>
@@ -354,83 +487,29 @@
 <p>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
 </blockquote>
 <p>1、运行命令： <code>ssh-keygen -t rsa -C &quot;邮件地址&quot;</code> 。邮件地址可以登录你的github - <code>Setting</code> - <code>Emails</code> 查看</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831230651502-494371235.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831230651502-494371235.png" alt=""></p>
 <p>2、然后连续3次回车，最终会生成一个文件在用户目录下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231018901-380467408.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231018901-380467408.png" alt=""></p>
 <p>3、打开用户目录，找到 <code>.ssh\id_rsa.pub</code> 文件，记事本打开并复制里面的内容</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231153499-1930129639.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231153499-1930129639.png" alt=""></p>
 <p>4、打开你的github主页，进入 <code>个人设置</code> - <code>SSH and GPG keys</code> - <code>New SSH key</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231720434-1195575481.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231720434-1195575481.png" alt=""></p>
 <p>将刚复制的内容粘贴到key那里，title随便填，保存。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231935345-1778926.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831231935345-1778926.png" alt=""></p>
 <p>5、测试连接</p>
 <p>运行命令： <code>ssh -T git@github.com</code> 。<strong>注意这条命令不用修改，直接运行</strong></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831232446646-1977369661.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831232446646-1977369661.png" alt=""></p>
 <p>6、全局配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;selier&quot;    // 你的github用户名，非昵称</span><br><span class="line">git config --global user.email  &quot;邮箱@qq.com&quot;    // 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831232630540-1792029555.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831232630540-1792029555.png" alt=""></p>
 <blockquote>
 <p>至此，你的Git就配置好了</p>
 </blockquote>
 <h3 id="安装-node-js"><a href="#安装-node-js" class="headerlink" title="安装 node.js"></a>安装 node.js</h3><p>下载安装 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodeJs</a> ，随便选一个即可，下载后安装时一路默认next (安装路径可以自选)。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831212813443-915937242.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831212813443-915937242.png" alt=""></p>
 <p>安装完成后，测试是否安装成功</p>
 <p>在 控制台中 输入 <code>node -v</code> ，<code>npm -v</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831213011673-721153980.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831213011673-721153980.png" alt=""></p>
 <p>此处说明下：新版的Node.js已自带npm，安装Node.js时会一起安装，npm的作用就是对Node.js依赖的包进行管理，也可以理解为用来安装/卸载Node.js需要装的东西</p>
 <h3 id="使用hexo写博客"><a href="#使用hexo写博客" class="headerlink" title="使用hexo写博客"></a>使用hexo写博客</h3><h4 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h4><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题。</p>
 <h4 id="2、原理"><a href="#2、原理" class="headerlink" title="2、原理"></a>2、原理</h4><p>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
@@ -445,87 +524,33 @@
 <blockquote>
 <p>可能你的网络无法访问网站并安装，那么你可以通过 <a href="http://npm.taobao.org/" target="_blank" rel="noopener">淘宝NPM镜像</a> 来安装： <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code> ，之后下面的所有用到 <code>npm</code> 的命令，可以使用 <code>cnpm</code> 代替 ，如 <code>npm install hexo-cli  -g</code> 改成 <code>cnpm install hexo-cli  -g</code></p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831220956547-994440155.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831220956547-994440155.png" alt=""></p>
 <p>2、 再输入 <code>npm install hexo --save</code> ，等待安装完成。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831222742602-605970209.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831222742602-605970209.png" alt=""></p>
 <p>3、初始化</p>
 <p>3.1、在电脑的某个地方新建一个文件夹（名字可以随便取），比如我的是 <code>D:\我的文档\selierlin.github.io</code> ，由于这个文件夹将来就作为你存放代码的地方，所以最好不要随便放。</p>
 <p>3.2、打开 <code>git-cmd</code> ，跳转到刚刚创建的文件夹位置，运行命令 <code>hexo init</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223350446-1421328244.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223350446-1421328244.png" alt=""></p>
 <p>然后会在你的文件夹中搭建好了环境</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223429090-2067706702.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223429090-2067706702.png" alt=""></p>
 <h4 id="5、配置-config-yml"><a href="#5、配置-config-yml" class="headerlink" title="5、配置 __config.yml"></a>5、配置 <code>__config.yml</code></h4><p>1、修改一些你的博客名字、描述、作者等。同时大家可以修改自己的主题，更多主题 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">点击这里</a> 。修改主题就修改 <code>_config.yml</code> 里面的 <code>theme</code> 。<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">更多关于其他配置信息修改请点击这里访问hexo官方文档</a> 。</p>
 <blockquote>
 <p>在 <code>_config.yml</code> 文档修改所有信息都要注意， <strong>冒号后面一定要有一个空格</strong></p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223855028-1789670474.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224222887-339834680.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831223855028-1789670474.png" alt=""></p>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224222887-339834680.png" alt=""></p>
 <p>2、hexo与github关联配置</p>
 <ul>
 <li>type改成git</li>
 <li>repo的格式就是：<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:你的用户名/你的用户名.github.io.git`</li>
 <li>branch为master</li>
 </ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224432102-1395042097.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224432102-1395042097.png" alt=""></p>
 <h4 id="6、启动本地服务"><a href="#6、启动本地服务" class="headerlink" title="6、启动本地服务"></a>6、启动本地服务</h4><p>1、使用 <code>git-cmd</code> 跳转到你的博客目录，依次输入以下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g  # 生成</span><br><span class="line">hexo s  # 启动服务</span><br></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831225245111-1714988765.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831225245111-1714988765.png" alt=""></p>
 <p>2、然后可以通过浏览器访问：<a href="http://127.0.0.1:4000" target="_blank" rel="noopener">http://127.0.0.1:4000</a> 你就看到你的博客样子啦。停止你的本地服务器，你可以在Git命令页面按住 <code>Ctrl+C</code> 来停止。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831225406233-959832966.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831225406233-959832966.png" alt=""></p>
 <blockquote>
 <p>如果浏览器一直转圈圈，加载不出来，一般情况下是因为端口占用的缘故，<a href="https://www.cnblogs.com/selier/p/9514426.html" target="_blank" rel="noopener">解决方法</a></p>
 </blockquote>
@@ -533,63 +558,21 @@
 <p>在上传代码到github之前，一定要记得先把你以前所有代码下载下来（虽然github有版本管理，但备份一下总是好的），因为从hexo提交代码时会把你以前的所有代码都删掉。</p>
 </blockquote>
 <p>1、确认你的 <code>_config.yml</code> 文件已经配置了Deployment</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224432102-1395042097.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831224432102-1395042097.png" alt=""></p>
 <p>2、<code>git-cmd</code> 跳转到博客目录，安装Hexo部署的插件 ： <code>npm install hexo-deployer-git --save</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234610838-1646291817.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234610838-1646291817.png" alt=""></p>
 <p>3、使用 <code>git-bash</code> 跳转到博客目录 ，运行命令 <code>hexo d</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234827833-1796945647.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234827833-1796945647.png" alt=""></p>
 <p>同时，在你的github上已经上传了文件</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831235011550-1278504002.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831235011550-1278504002.png" alt=""></p>
 <blockquote>
 <p>如果出现 <code>Deployer not found: git</code> 说明Hexo部署的插件没有安装好</p>
 </blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234040111-1025719987.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831234040111-1025719987.png" alt=""></p>
 <p>4、发布完成，现在可以通过 <code>你的用户名.github.io</code> 访问自己的网站啦</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831235111979-1800812797.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201808/1469487-20180831235111979-1800812797.png" alt=""></p>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><h4 id="1、保留CNAME、README-md等文件"><a href="#1、保留CNAME、README-md等文件" class="headerlink" title="1、保留CNAME、README.md等文件"></a>1、保留CNAME、README.md等文件</h4><p>提交之后网页上一看，发现以前其它代码都没了，此时不要慌，一些非md文件可以把他们放到source文件夹下，这里的所有文件都会原样复制（除了md文件）到public目录的</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901000346239-942992669.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901000346239-942992669.png" alt=""></p>
 <blockquote>
 <p>由于hexo默认会把所有md文件都转换成html，包括README.md，所有需要每次生成之后、上传之前，手动将README.md复制到public目录，并删除README.html。</p>
 </blockquote>
@@ -612,33 +595,15 @@
 </blockquote>
 <hr>
 <p>定位到我们的hexo根目录，执行命令： <code>hexo new &#39;my-first-blog&#39;</code></p>
-<p>hexo会帮我们在_posts下生成相关md文件<br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001520549-1245234083.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
+<p>hexo会帮我们在_posts下生成相关md文件<br><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001520549-1245234083.png" alt=""></p>
 <p>我们只需要打开这个文件就可以开始写博客了，默认生成如下内容</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001451028-1607010567.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001451028-1607010567.png" alt=""></p>
 <p>当然你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间。</p>
 <p>一般完整格式如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">以下是正文</span><br></pre></td></tr></table></figure>
 <p>那么 <code>hexo new page &#39;postName&#39;</code> 命令和 <code>hexo new &#39;postName&#39;</code> 有什么区别呢？</p>
 <p><code>hexo new page &quot;my-second-blog&quot;</code> 生成如下：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001652539-250117459.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001652539-250117459.png" alt=""></p>
 <p>最终部署时生成：<code>博客目录\public\my-second-blog\index.html</code> ，但是它不会作为文章出现在博文目录。</p>
 <h4 id="5、修改主题"><a href="#5、修改主题" class="headerlink" title="5、修改主题"></a>5、修改主题</h4><p>既然默认主题很丑，那我们首先来替换一个好看点的主题。这是 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方主题</a></p>
 <p>这里我推荐几款不错的主题：</p>
@@ -686,13 +651,7 @@
 <li>使用 git 拉取主题 <code>git clone 仓库主题地址.git themes/主题名称</code> ，意思是下载主题并将其保存到themes目录下</li>
 </ul>
 <p>如：<code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901101234460-1255176256.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901101234460-1255176256.png" alt=""></p>
 <ul>
 <li>修改 主目录下 <code>_config.yml</code> 中的 <code>theme: landscape</code> 改为 <code>theme: next</code> ，然后重新执行 <code>hexo g</code> 来重新生成。</li>
 </ul>
@@ -713,311 +672,396 @@
 <p>答案是在合适的位置加上 <code>&lt;!--more--&gt;</code> 即可，例如：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 前言</span></span><br><span class="line"></span><br><span class="line">使用github pages服务搭建博客的好处有：</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>全是静态文件，访问速度快；</span><br><span class="line"><span class="bullet">2. </span>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</span><br><span class="line"><span class="bullet">3. </span>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"><span class="bullet">4. </span>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</span><br><span class="line"><span class="bullet">5. </span>博客内容可以轻松打包、转移、发布到其它平台；</span><br><span class="line"><span class="bullet">6. </span>等等；</span><br></pre></td></tr></table></figure>
 <p>最终效果：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001817554-1020312230.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-        </div>
+<p><img src="http://images2018.cnblogs.com/blog/1469487/201809/1469487-20180901001817554-1020312230.png" alt=""></p>
 
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2018-09-01T06:29:36.468Z" itemprop="dateUpdated">2018-09-01 14:29:36</time>
-</span><br>
-
-
-        
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" target="_blank" rel="external">http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/</a>
-        
+      
     </div>
+
     
-    <footer>
-        <a href="http://theliang.coding.me/blog">
-            <img src="/img/avatar.jpg" alt="Selier">
-            Selier
-        </a>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/微擎安装使用及插件模块安装/" rel="prev" title="微擎安装使用及插件模块安装">
+                微擎安装使用及插件模块安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
+  </div>
+  
+  
+  
+  </article>
 
 
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+  </div>
 
 
-            
-<div class="page-share-wrap">
-    
+          </div>
+          
 
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&title=《使用hexo+github搭建免费个人博客详细教程》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&title=《使用hexo+github搭建免费个人博客详细教程》 — Selier&source=
-
-
-Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客
-" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo+github搭建免费个人博客详细教程》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&via=http://theliang.coding.me/blog" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
+  
 
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
+  </div>
 
+  <aside id="sidebar" class="sidebar">
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/01/微擎安装使用及插件模块安装/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">微擎安装使用及插件模块安装</h4>
-      </a>
-    </div>
-  
+    <div class="sidebar-inner">
 
-  
-</nav>
+      
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-        </label>
-        
-    </div>
-</div>
-
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p><span>Selier &copy; 2018</span>
-            <span>
+              <p class="site-author-name" itemprop="name">Selier</p>
+              <p class="site-description motion-element" itemprop="description">Java 技术 分享 博客 效率 工具 资源</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
                 
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
-    </div>
-</footer>
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&title=《使用hexo+github搭建免费个人博客详细教程》 — Selier&pic=http://theliang.coding.me/blog/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&title=《使用hexo+github搭建免费个人博客详细教程》 — Selier&source=
-
-
-Windows环境下Git安装、配置SSH key、安装node.js npm、安装Hexo及配置、发布博客
-" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo+github搭建免费个人博客详细教程》 — Selier&url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/&via=http://theliang.coding.me/blog" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://theliang.coding.me/blog/2018/09/01/使用hexo-github搭建免费个人博客详细教程/" alt="微信分享二维码">
-</div>
-
-
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-
-</script>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
-            <time class="flex-col time">{date}</time>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-    </a>
-</li>
-</template>
+      </section>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建github博客"><span class="nav-number">1.2.</span> <span class="nav-text">搭建github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建仓库"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">新建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载安装"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">配置SSH key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-node-js"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装 node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo写博客"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用hexo写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、简介"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">1、简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、原理"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2、原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、注意事项"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">3、注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、安装"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">4、安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、配置-config-yml"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">5、配置 __config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、启动本地服务"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">6、启动本地服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、上传到Github"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">7、上传到Github</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">1.2.5.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、保留CNAME、README-md等文件"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">1、保留CNAME、README.md等文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、常用hexo命令"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">2、常用hexo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-config-yml"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">3、_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、写博客"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">4、写博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、修改主题"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">5、修改主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、如何让博文列表不显示全部内容"><span class="nav-number">1.2.5.6.</span> <span class="nav-text">6、如何让博文列表不显示全部内容</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Selier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
 
 
 
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+        
+      </div>
+    </footer>
 
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
