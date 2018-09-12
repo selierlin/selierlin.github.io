@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180911101801356-1461291026.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180911101814976-1582961573.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180911101829461-585080389.png">
-<meta property="og:updated_time" content="2018-09-12T03:42:29.347Z">
+<meta property="og:updated_time" content="2018-09-12T06:04:33.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo使用细节及各种问题">
 <meta name="twitter:description" content="解决markdown图片不显示(返回403 forbidden)、添加本地图片无法显示、修改文章page模板、同时部署发布同步到多个仓库站点(Github、coding、gitee 码云)">
@@ -359,11 +359,36 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-12 11:42:29" itemprop="dateModified" datetime="2018-09-12T11:42:29+08:00">2018-09-12</time>
+                <time title="修改时间：2018-09-12 14:04:33" itemprop="dateModified" datetime="2018-09-12T14:04:33+08:00">2018-09-12</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Github/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -415,7 +440,7 @@
 <p>它默认是这样的：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>你可以将每次重复书写的内容放在里面，这样每次新建的时候都要按这个模板生成。我的模板如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">description: </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;meta name="referrer" content="no-referrer" /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories: [分类,A]</span><br><span class="line">tags: [标签,B]</span><br><span class="line">description: 描述</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;meta name="referrer" content="no-referrer" /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="同时发布到多个仓库"><a href="#同时发布到多个仓库" class="headerlink" title="同时发布到多个仓库"></a>同时发布到多个仓库</h2><p>Github毕竟是国外的网站，在国内访问会受到不少限制，这时候你可以选择 &lt;coding.net&gt; 来发布自己的博客。但是又想两个都发布，最好还是写一篇能同时发布到这两个站点</p>
 <p>这个是当然没有问题的！但是一个站点只可以部署一个网站，因为它会校验SSH key的唯一性，不可以重复。下面看下具体步骤</p>
 <p>1、首先你需要注册一个 <a href="https://coding.net" target="_blank" rel="noopener">coding</a> ，新建一个项目</p>
@@ -490,6 +515,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/09/12/实现Github和Coding仓库等Git服务托管更新/" rel="prev" title="实现Github和Coding仓库等Git服务托管更新">
+                实现Github和Coding仓库等Git服务托管更新 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -558,7 +587,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -573,7 +602,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>

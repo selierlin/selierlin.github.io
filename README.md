@@ -6,10 +6,9 @@
 
 [selier.coding.me](http://selier.coding.me)
 
-[selierlin.gitee.io](https://selierlin.gitee.io/)
-
 [blog.csdn.net/the_liang](https://blog.csdn.net/the_liang)
 
+[selierlin.gitee.io](https://selierlin.gitee.io/)
 
 本博客的主要标签为： `Java` `技术` `分享` `博客` `经验` `技巧` `效率` `工具`
 

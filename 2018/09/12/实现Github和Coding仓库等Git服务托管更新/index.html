@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="如何使Github、Coding、Gitee 码云 同时发布更新，多个不同Git服务器之间同时管理部署发布提交">
+<meta name="keywords" content="Github,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现Github和Coding仓库等Git服务托管更新">
+<meta property="og:url" content="http://theliang.coding.me/blog/2018/09/12/实现Github和Coding仓库等Git服务托管更新/index.html">
+<meta property="og:site_name" content="Selier">
+<meta property="og:description" content="如何使Github、Coding、Gitee 码云 同时发布更新，多个不同Git服务器之间同时管理部署发布提交">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912134825497-1979546688.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912134908376-1914227133.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912135338258-1921236937.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912135422434-599727150.png">
+<meta property="og:updated_time" content="2018-09-12T06:02:55.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实现Github和Coding仓库等Git服务托管更新">
+<meta name="twitter:description" content="如何使Github、Coding、Gitee 码云 同时发布更新，多个不同Git服务器之间同时管理部署发布提交">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912134825497-1979546688.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Selier" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://theliang.coding.me/blog/2018/09/12/实现Github和Coding仓库等Git服务托管更新/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>实现Github和Coding仓库等Git服务托管更新 | Selier</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Selier</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享美的价值</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://theliang.coding.me/blog/2018/09/12/实现Github和Coding仓库等Git服务托管更新/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Selier">
+      <meta itemprop="description" content="Java 技术 分享 博客 效率 工具 资源">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Selier">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">实现Github和Coding仓库等Git服务托管更新
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-12 13:57:06 / 修改时间：14:02:55" itemprop="dateCreated datePublished" datetime="2018-09-12T13:57:06+08:00">2018-09-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Github/" itemprop="url" rel="index"><span itemprop="name">Github</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">如何使Github、Coding、Gitee 码云 同时发布更新，多个不同Git服务器之间同时管理部署发布提交</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>如何使Github、Coding、Gitee 码云 同时发布更新，多个不同Git服务器之间同时管理部署发布提交</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h1><p>因为在Github上托管的静态页面访问加载速度较为缓慢，故想在Coding上再建一个静态页面的项目，方便国内国外访问的分流，使访问的稳定性更高。（此为契机，本文只讲两托管网站仓库的同步更新。Coding静态页面自定义域名及国内外的DNS分流，设置比较简单，搜索一下有很多内容，而且设置过程中我也没碰到问题，就不再赘述）Coding是国内一个类似Github的代码托管网站，同样有git的分布式版本控制功能。考虑到Github在国内访问的不稳定性，可以将需要管理的项目同时放到Github和Coding上。最终想要实现的想法为，本地仓库发生更改后能同时更新到Github和Coding的仓库内。</p>
+<h1 id="两个方法"><a href="#两个方法" class="headerlink" title="两个方法"></a>两个方法</h1><h2 id="导入Github项目至Coding"><a href="#导入Github项目至Coding" class="headerlink" title="导入Github项目至Coding"></a>导入Github项目至Coding</h2><p>将Github上的项目直接导入Coding，以Github下项目仓库 <code>user_name/repo_name</code> 为例</p>
+<p>1、复制该仓库的SSH密钥</p>
+<p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912134825497-1979546688.png" alt=""></p>
+<p>2、在Coding上新建一个项目仓库，输入完项目名称 <code>user_name/repo_name</code> （仓库名可以和GitHub上的不同），然后点击导入仓库，并选择版本控制仓库的类型为Git，然后将刚才复制的SSH密钥粘贴到下图的文本框内，等待导入完成。</p>
+<p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912134908376-1914227133.png" alt=""></p>
+<h2 id="同时更新到Github和Coding"><a href="#同时更新到Github和Coding" class="headerlink" title="同时更新到Github和Coding"></a>同时更新到Github和Coding</h2><p>1、在已有的本地仓库（没有可以从Github下载）内找到隐藏的 <code>.git</code> 文件夹，打开</p>
+<p>2、再打开 <code>config</code> 文件 </p>
+<p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912135338258-1921236937.png" alt=""></p>
+<p>3、添加如下设置：即设置远端仓库的url，并命名为origin</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[remote</span> <span class="string">"origin"</span><span class="string">]</span></span><br><span class="line">        <span class="string">url</span> <span class="string">=</span> <span class="string">git@github.com:用户名/仓库名.git</span></span><br><span class="line">        <span class="string">url</span> <span class="string">=</span> <span class="string">git@git.coding.net:用户名/仓库名.git</span></span><br><span class="line">        <span class="string">url</span> <span class="string">=</span> <span class="string">git@git.oschina.net:用户名/仓库名.git</span>  <span class="comment"># 码云</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://images2018.cnblogs.com/blog/1469487/201809/1469487-20180912135422434-599727150.png" alt=""></p>
+<p>4、更改仓库内容后，在终端内输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd .../repo_name  #定位至本地仓库目录</span><br><span class="line">git add .</span><br><span class="line">git commit -m "commit info"</span><br><span class="line">git push origin  #默认push至远端仓库origin的master分支下</span><br></pre></td></tr></table></figure>
+<p>这样即可做到对两个托管仓库进行同时更新。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Github/" rel="tag"># Github</a>
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/Hexo使用细节及各种问题/" rel="next" title="Hexo使用细节及各种问题">
+                <i class="fa fa-chevron-left"></i> Hexo使用细节及各种问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Selier</p>
+              <p class="site-description motion-element" itemprop="description">Java 技术 分享 博客 效率 工具 资源</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#缘由"><span class="nav-number">1.</span> <span class="nav-text">缘由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个方法"><span class="nav-number">2.</span> <span class="nav-text">两个方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导入Github项目至Coding"><span class="nav-number">2.1.</span> <span class="nav-text">导入Github项目至Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时更新到Github和Coding"><span class="nav-number">2.2.</span> <span class="nav-text">同时更新到Github和Coding</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Selier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
